@@ -2589,6 +2589,7 @@ where
 
             // These API constants ought to be more specific...
             Cdecl => Conv::C,
+            WASMBindgen => Conv::C,
         };
 
         let mut inputs = sig.inputs();

@@ -36,6 +36,7 @@ pub enum Abi {
     EfiApi,
     AvrInterrupt,
     AvrNonBlockingInterrupt,
+    WASMBindgen,
 
     // Multiplatform / generic ABIs
     System,
@@ -81,6 +82,7 @@ const AbiDatas: &[AbiData] = &[
         name: "avr-non-blocking-interrupt",
         generic: false,
     },
+    AbiData { abi: Abi::WASMBindgen, name: "wasm-bindgen", generic: false },
     // Cross-platform ABIs
     AbiData { abi: Abi::System, name: "system", generic: true },
     AbiData { abi: Abi::RustIntrinsic, name: "rust-intrinsic", generic: true },
