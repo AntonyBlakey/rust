@@ -50,7 +50,7 @@ impl<'a> PostExpansionVisitor<'a> {
         match &*symbol_unescaped.as_str() {
             // Stable
             "Rust" | "C" | "cdecl" | "stdcall" | "fastcall" | "aapcs" | "win64" | "sysv64"
-            | "system" => {}
+            | "system" | "wasm-bindgen" => {}
             "rust-intrinsic" => {
                 gate_feature_post!(&self, intrinsics, span, "intrinsics are subject to change");
             }
