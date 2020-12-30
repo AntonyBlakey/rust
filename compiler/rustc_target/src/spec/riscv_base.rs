@@ -16,5 +16,6 @@ pub fn unsupported_abis() -> Vec<Abi> {
         Abi::Msp430Interrupt,
         Abi::X86Interrupt,
         Abi::AmdGpuKernel,
+        Abi::WASMBindgen,
     ]
 }

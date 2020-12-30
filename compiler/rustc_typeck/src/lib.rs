@@ -116,14 +116,14 @@ use astconv::AstConv;
 use bounds::Bounds;
 
 fn require_c_abi_if_c_variadic(tcx: TyCtxt<'_>, decl: &hir::FnDecl<'_>, abi: Abi, span: Span) {
-    if decl.c_variadic && !(abi == Abi::C || abi == Abi::Cdecl) {
+    if decl.c_variadic && !(abi == Abi::C || abi == Abi::Cdecl || abi == Abi::WASMBindgen) {
         let mut err = struct_span_err!(
             tcx.sess,
             span,
             E0045,
-            "C-variadic function must have C or cdecl calling convention"
+            "C-variadic function must have C, cdecl, or wasm-bindgen calling convention"
         );
-        err.span_label(span, "C-variadics require C or cdecl calling convention").emit();
+        err.span_label(span, "C-variadics require C, cdecl, or wasm-bindgen calling convention").emit();
     }
 }
 

@@ -59,6 +59,7 @@ pub fn target() -> Target {
                 Abi::Msp430Interrupt,
                 Abi::X86Interrupt,
                 Abi::AmdGpuKernel,
+                Abi::WASMBindgen,
             ],
 
             ..Default::default()
